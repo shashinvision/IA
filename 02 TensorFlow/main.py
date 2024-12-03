@@ -82,10 +82,11 @@ print("******************************************")
 
 # Descongelar capas del modelo base para ajuste fino
 base_model.trainable = True
-
+for layer in base_model.layers[:-10]:  # Unfreeze the last 10 layers
+    layer.trainable = False
 # Recompilar el modelo con una tasa de aprendizaje baja para evitar dañar los pesos preentrenados
 model.compile(
-    optimizer=tf.keras.optimizers.Adam(learning_rate=1e-5),
+    optimizer=tf.keras.optimizers.Adam(learning_rate=1e-4),
     loss='sparse_categorical_crossentropy',
     metrics=['accuracy']
 )
