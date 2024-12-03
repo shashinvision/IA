@@ -4,7 +4,6 @@ import os
 # Ruta del conjunto de datos
 dataset_path = './IMGs/'
 print("******************************************")
-
 print(f" Carpeta actual: {os.getcwd()}")
 print("******************************************")
 
