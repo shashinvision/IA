@@ -2,8 +2,11 @@ import tensorflow as tf
 import os
 
 # Ruta del conjunto de datos
-dataset_path = '/Users/felipemancillareyes/code/Personal/IA/02 TensorFlow/IMGs/'
-print(os.getcwd())
+dataset_path = './IMGs/'
+print("******************************************")
+
+print(f" Carpeta actual: {os.getcwd()}")
+print("******************************************")
 
 # Cargar los datos con división en entrenamiento y validación
 train_data = tf.keras.preprocessing.image_dataset_from_directory(
@@ -74,7 +77,9 @@ model.fit(train_data, validation_data=val_data, epochs=10)
 
 # Evaluar el modelo en el conjunto de validación
 loss, accuracy = model.evaluate(val_data)
+print("******************************************")
 print(f'Validation Accuracy: {accuracy:.2f}, Loss: {loss:.2f}')
+print("******************************************")
 
 # Descongelar capas del modelo base para ajuste fino
 base_model.trainable = True
@@ -91,4 +96,6 @@ model.fit(train_data, validation_data=val_data, epochs=5)
 
 # Evaluar el modelo después del ajuste fino
 loss, accuracy = model.evaluate(val_data)
+print("******************************************")
 print(f'Fine-Tuned Validation Accuracy: {accuracy:.2f}, Loss: {loss:.2f}')
+print("******************************************")
