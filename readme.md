@@ -13,3 +13,6 @@ pip install opencv-python
 ```bash
 pip install --upgrade opencv-contrib-python
 ```
+```bash
+pip install torch torchvision
+```
