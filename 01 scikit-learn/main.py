@@ -8,7 +8,7 @@ iris = load_iris()
 #Dividir los datos en conjuntos de entrenamiento y prueba
 X_train, X_test, y_train, y_test = train_test_split(iris.data, iris.target, random_state=0)
 
-#Crear un clasificador KNN
+#Crear un clasificador KNN con k=3
 knn = KNeighborsClassifier(n_neighbors=3)
 
 #Entrenar el clasificador        
