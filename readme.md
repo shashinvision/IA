@@ -14,3 +14,5 @@ pip install --upgrade opencv-contrib-python
 ```bash
 pip install torch torchvision
 ```
+
+## Get publics DataSets or Models on https://www.kaggle.com/
